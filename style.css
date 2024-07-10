@@ -1,0 +1,248 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Courier New", Courier, monospace;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  /* gap: 4rem; */
+  padding: 3rem;
+  background: #fdfdfd;
+  color: darkslategray;
+}
+
+h1 {
+  text-align: center;
+  color: darkslategray;
+  text-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+  font-size: 3rem;
+  font-weight: 600;
+  padding: 0.5rem;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+form .form-text {
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.15rem;
+}
+
+form .data-input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.day,
+.month,
+.year {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.5s ease-in-out;
+}
+
+.day:hover,
+.month:hover,
+.year:hover {
+  transform: translateY(-0.5rem);
+}
+
+.day label,
+.month label,
+.year label {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.day input,
+.month input,
+.year input {
+  padding: 0.5rem;
+  font-size: 2rem;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  text-align: center;
+  outline: none;
+  border: none;
+  box-shadow: 2px 3px 5px darkslategray;
+}
+
+.day input::placeholder,
+.month input::placeholder,
+.year input::placeholder {
+  color: lightgray;
+}
+
+form .data-input #submit {
+  background: darkslategray;
+  margin-top: 2rem;
+  padding: 0.5rem;
+  color: #fdfdfd;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  outline: none;
+  border: none;
+  box-shadow: 2px 3px 5px darkslategray;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.data-input #submit:hover {
+  background: #fdfdfd;
+  color: darkslategray;
+  transform: translateY(-0.5rem);
+}
+
+.data-input #submit:active {
+  transform: scale(0.95);
+}
+
+#day-error,
+#month-error,
+#year-error {
+  color: #f00;
+  font-weight: 600;
+  transition: all 0.5s ease;
+  display: none;
+}
+
+.result {
+  /* border: 1px solid darkslategray; */
+  border-radius: 1rem;
+  width: calc(100% - 60%);
+  min-width: 400px;
+  height: 350px;
+  padding: 1rem 2rem;
+  font-size: 3rem;
+  box-shadow: 0 5px 5px darkslategray;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  /* gap: 1rem; */
+}
+
+.refresh {
+  background-color: darkslategray;
+  padding: 0.5rem;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 400;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  box-shadow: 0 3px 3px darkslategray;
+}
+
+@media screen and (max-width: 800px) {
+  body {
+    padding: 1rem;
+  }
+  h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    padding: 0.25rem;
+  }
+
+  form {
+    width: 100%;
+    padding-top: 0.5rem 0;
+  }
+
+  form .form-text {
+    font-size: 0.1 rem;
+    font-weight: 200;
+    letter-spacing: 0.25rem;
+    text-align: center;
+    /* padding: 0 5rem; */
+  }
+
+  form .data-input {
+    width: 100%;
+    gap: 1rem;
+  }
+
+  .day label,
+  .month label,
+  .year label {
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  .day input,
+  .month input,
+  .year input {
+    padding: 0.5rem;
+    font-size: 1rem;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    text-align: center;
+    outline: none;
+    border: none;
+    box-shadow: 2px 3px 5px darkslategray;
+  }
+
+  form .data-input #submit {
+    margin-top: 1rem;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    font-size: 1rem;
+  }
+
+  #day-error,
+  #month-error,
+  #year-error {
+    font-size: 0.75rem;
+    font-weight: 600;
+    transition: all 0.5s ease;
+    display: none;
+  }
+
+  .result {
+    /* border: 1px solid darkslategray; */
+    border-radius: 1rem;
+    min-width: 300px;
+    height: 350px;
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .refresh {
+    margin-top: 2rem;
+  }
+}
