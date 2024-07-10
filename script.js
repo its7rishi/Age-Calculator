@@ -40,16 +40,14 @@ const calcAge = (day, month, year) => {
   }
 
   // Result Output
-
-  resultYears.textContent = `${yearDiff < 10 ? "0" + yearDiff : yearDiff} ${
-    yearDiff < 2 ? "year" : "years"
-  }`;
-  resultMonths.textContent = `${monthDiff < 10 ? "0" + monthDiff : monthDiff} ${
+  resultYears.style.display = "block";
+  resultMonths.style.display = "block";
+  resultDays.style.display = "block";
+  resultYears.textContent = `${yearDiff} ${yearDiff < 2 ? "year" : "years"}`;
+  resultMonths.textContent = `${monthDiff} ${
     monthDiff < 2 ? "month" : "months"
   }`;
-  resultDays.textContent = `${dayDiff < 10 ? "0" + dayDiff : dayDiff} ${
-    dayDiff < 2 ? "day" : "days"
-  }`;
+  resultDays.textContent = `${dayDiff} ${dayDiff < 2 ? "day" : "days"}`;
 };
 
 // On Submit Validation Logic
