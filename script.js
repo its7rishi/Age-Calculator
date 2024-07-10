@@ -25,7 +25,7 @@ let refreshBtn = document.getElementById("refresh");
 const calcAge = (day, month, year) => {
   const inputDate = new Date(`${year}-${month}-${day}`);
 
-  let yearDiff = currentYear - inputDate.getFullYear();
+  let yearDiff = parseInt(currentYear - inputDate.getFullYear());
   let monthDiff = currentMonth - inputDate.getMonth() - 1;
   let dayDiff = currentDate - inputDate.getDate();
 
