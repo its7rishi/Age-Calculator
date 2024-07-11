@@ -23,7 +23,7 @@ let refreshBtn = document.getElementById("refresh");
 
 //  Age Calculation Logic
 const calcAge = (day, month, year) => {
-  const inputDate = new Date(`${year}-${month}-${day}`);
+  let inputDate = new Date(`${year}-${month}-${day}`.replace(/-/g, "/")); // replaced '-' with '/' to make it work on Safari and iOS.
 
   // Converting date to ISO Format
   inputDate.toISOString();
