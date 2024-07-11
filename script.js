@@ -42,6 +42,11 @@ const calcAge = (day, month, year) => {
     monthDiff += 12;
   }
 
+  if (monthDiff === 12) {
+    yearDiff += 1;
+    monthDiff = 0;
+  }
+
   // Result Output
   resultYears.style.display = "block";
   resultMonths.style.display = "block";
